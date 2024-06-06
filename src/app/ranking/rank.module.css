@@ -1,0 +1,39 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rankContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+}
+.rankInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.rankTitileContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.title{
+font: 25px;
+color: white;
+font-weight: 700;
+}
+.coin{
+    font: 20px;
+    color: white;
+    font-weight: 500;
+}

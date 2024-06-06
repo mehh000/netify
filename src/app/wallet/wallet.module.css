@@ -1,0 +1,13 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    font-size: 40px;
+    color: white;
+    font-weight: 300;
+}

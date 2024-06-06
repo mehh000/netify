@@ -1,0 +1,59 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+}
+
+.headContainer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teskContainer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title {
+    font-size: 25px;
+    color: rgb(233, 233, 233);
+    font-weight: 600;
+}
+
+.tesk {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #ffffff40;
+    width: 92%;
+    border-radius: 13px;
+    padding: 5px;
+    box-shadow: 0 3px 7px rgb(43, 43, 43);
+}
+
+.teslkInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.teskTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: gainsboro;
+}
+
+.teskreword {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: gainsboro;
+}

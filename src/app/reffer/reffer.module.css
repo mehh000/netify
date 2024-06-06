@@ -1,0 +1,102 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 20px 0; */
+}
+
+.headContainer{
+
+width: 100%;
+height: 30%;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+gap: 30px;
+}
+.invitedContainer{
+
+width: 100%;
+height: 55%;
+}
+.linkContainer{
+
+width: 100%;
+height: 15%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.title{
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+.refInfoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.341);
+    width: 92%;
+    height: 40%;
+    border-radius: 18px;
+    box-shadow: 0 3px 7px #00000059;
+}
+
+.refBonusContainer{
+
+}
+.details{
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+.andget{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(141, 141, 141);
+    font-weight: 500;
+    font-size: 16px;
+}
+.ammount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.inviteLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.341);
+    width: 60%;
+    height: 60%;
+    border-radius: 18px;
+    box-shadow: 0 3px 7px #00000059;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.copyactionContainer{
+    background: rgba(255, 255, 255, 0.341);
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    border-radius: 20px;
+    box-shadow: 0 3px 7px #00000059;
+}

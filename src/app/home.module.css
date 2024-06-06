@@ -1,0 +1,130 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+}
+.loaderContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headContainer {
+
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.balanceConainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.trofeConatiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.balanceAmount {
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.status {
+    font-size: 18px;
+    color: #FFC107;
+    font-family: revert;
+    font-weight: 500;
+
+}
+
+.tabConatiner {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55%;
+}
+
+.imageContainer {
+    border-radius: 50%;
+    background: lightblue;
+    box-shadow:
+        0 8px 80px rgba(0, 134, 255, 1),
+        0 8px 80px rgba(0, 134, 255, 1),
+        0 8px 90px rgba(0, 134, 255, 1),
+        0 8px 1000px rgba(0, 134, 255, 1),
+        0 8px 120px rgba(0, 134, 255, 1),
+        0 8px 200px rgba(0, 134, 255, 1);
+    /* box-shadow: 0 5px 7px black, 0 5px 7px rgba(0, 134, 255, 1); */
+}
+
+.featureContainer {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.feartures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+
+    border-radius: 30px;
+    height: 40%;
+    width: 95%;
+    box-shadow: 0 3px 16px #00000029;
+}
+
+.tablimitContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 70%;
+}
+
+.tabLimit {
+    float: right;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFEB3B;
+
+}
+.limitLavel{
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFEB3B;
+}
+
+.tabImage {
+    height: 250px;
+    width: 250px;
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.clickedImage {
+    height: 230px;
+    width: 230px;
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition */
+}

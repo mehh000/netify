@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 5px 7px black;
+    padding: 20px;
+    border-radius: 20px;
+    background: #607D8B;
+}
+
+.cardTitle {
+    font-size: 22px;
+    color: white;
+}
+
+.number {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+}

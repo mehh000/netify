@@ -1,0 +1,56 @@
+.container {
+    width: 100%;
+    height: 100svh;
+    display: grid;
+    grid-template-columns: 0.4fr 2.6fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    grid-template-areas: "header header"
+        "sidebar content";
+}
+
+.header {
+
+    grid-area: header;
+    background: #2196F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title{
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.sidebar {
+
+    grid-area: sidebar;
+    background: rgb(50 67 76);
+
+}.ultag{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    
+}
+.litag{
+    line-height: 40px;
+    font-size: 22px;
+    color: gainsboro;
+    width: 100%;
+    padding-left: 10px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.content {
+
+    grid-area: content;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+
+
+}
