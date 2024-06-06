@@ -11,7 +11,7 @@ import axios from 'axios';
 const GlobalContext = createContext({});
 
 export const GlobalContextProvider = ({ children }) => {
-  const [balance, setBalance] = useState(99999);
+  const [balance, setBalance] = useState(1000);
   const [tapLimit, setTapLimit] = useState(1);
 
   const [storage, setStorage] = useState(1000);
@@ -56,7 +56,7 @@ export const GlobalContextProvider = ({ children }) => {
   return (
     <GlobalContext.Provider value={{
       users,
-      balance: Number,
+      balance,
       tapLimit,
       setBalance,
       storage,
