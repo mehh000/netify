@@ -1,19 +1,8 @@
 'use client'
 
-
-import React from 'react'
-import{ useState } from 'react';
+import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import {db } from '../firebaseConfig'
-
-
-
-
-
-
-
-
-
+import { db } from '../firebaseConfig';
 
 const AddUserData = () => {
   const [formData, setFormData] = useState({
@@ -124,20 +113,3 @@ const AddUserData = () => {
 };
 
 export default AddUserData;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
