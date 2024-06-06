@@ -56,7 +56,7 @@ export const GlobalContextProvider = ({ children }) => {
   return (
     <GlobalContext.Provider value={{
       users,
-      balance,
+      balance: Number,
       tapLimit,
       setBalance,
       storage,

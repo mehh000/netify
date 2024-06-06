@@ -10,64 +10,23 @@ import { useGlobalContext } from "./Context/GlobalContext";
 import Levels from "./lib/rankingData";
 import { collection, addDoc } from "firebase/firestore";
 
+
+
+
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [holdRankingImagePath, setHoldRankingImagePath] = useState("");
   const [holdRankingTitle, setHoldRankingTitle] = useState("");
 
-  const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    username: '',
-    userId: '',
-    balance: '',
-    touchlvl: '',
-    storelvl: ''
-  });
 
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const docRef = await addDoc(collection(db, 'users'), {
-        first_name: formData.first_name,
-        last_name: formData.last_name,
-        username: formData.username,
-        userId: Number(formData.userId),
-        balance: Number(formData.balance),
-        touchlvl: Number(formData.touchlvl),
-        storelvl: Number(formData.storelvl)
-      });
-      console.log('Document written with ID: ', docRef.id);
-      // Reset form
-      setFormData({
-        first_name: '',
-        last_name: '',
-        username: '',
-        userId: '',
-        balance: '',
-        touchlvl: '',
-        storelvl: ''
-      });
-    } catch (e) {
-      console.error('Error adding document: ', e);
-    }
-  };
-
-  const {
-    balance,
-    tapLimit,
-    setBalance,
-    storage,
-    storageDynamic,
-    setStorageDynamic,
-  } = useGlobalContext();
+const {
+  balance,
+  tapLimit,
+  setBalance,
+  storage,
+  storageDynamic,
+  setStorageDynamic,
+} = useGlobalContext();
   // console.log(balance);
 
   const handleClick = () => {
@@ -138,9 +97,7 @@ const Home = () => {
               height={30}
               width={30}
             />
-            <h1 className={classes.status}>
-            {holdRankingTitle}
-            </h1>
+            <h1 className={classes.status}>{holdRankingTitle}</h1>
           </div>
         </Link>
       </div>
