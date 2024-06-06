@@ -23,11 +23,17 @@ const User = () => {
     };
 
     fetchData();
-  }, []);
+
+    // Fetch data every 5 seconds
+    const interval = setInterval(fetchData, 5000);
+
+    // Clean up interval to avoid memory leaks
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
     <div>
-      <h1>User Data</h1>
+      <h1>Current User Data</h1>
       {data ? (
         <div>
           <p>User ID: {data.message.from.id}</p>
