@@ -145,6 +145,9 @@ const {
           <Link href={"/wallet"}>
             <Image src="/wallet.png" alt="coin" height={35} width={35} />{" "}
           </Link>
+          <Link href={"/cureentuser"}>
+            <Image src="/coin.png" alt="coin" height={35} width={35} />{" "}
+          </Link>
         </div>
       </div>
     </div>
