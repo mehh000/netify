@@ -24,8 +24,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [storageLvlPrice, setStorageLvlPrice] = useState(2500)
 
   const [data, setData] = useState({});
-  const [loadingg, setLoadingg] = useState(true);
-  const [error, setError] = useState(null);
+
 
   //fire base data get function here
 
@@ -38,7 +37,7 @@ export const GlobalContextProvider = ({ children }) => {
         const response = await axios.get(
           'https://api.telegram.org/bot7284102937:AAFEFp3JhAjUQv80XtFUiA9kPOUwXJj2HSY/getUpdates'
         );
-        setData(response.data); // Update state with the full response data (array)
+        setData(response.data); 
         console.log('Data fetched:', data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -49,43 +48,6 @@ export const GlobalContextProvider = ({ children }) => {
 
     fetchData()
   }, [balance]);
-
-  console.log(data);
-
-
-
-  // console.log('Latest Update:', data);
-
-
-
-  // useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     const querySnapshot = await getDocs(collection(db, 'users'));
-  //     const usersData = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-  //     setUsers(usersData);
-  //     setLoading(false);
-  //   };
-
-  //   fetchUsers();
-
-  //   //this forte data from tele api
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get('https://api.telegram.org/bot7284102937:AAFEFp3JhAjUQv80XtFUiA9kPOUwXJj2HSY/getUpdates');
-  //       setData(response.data);
-  //     } catch (error) {
-  //       setError('Failed to fetch data');
-  //     } 
-  //   };
-
-  //   fetchData();
-
-  // }, []);
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
 
 
 

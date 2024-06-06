@@ -6,7 +6,7 @@ import cl from "./home.module.css"
 import Image from 'next/image'
 import { useGlobalContext } from '@/app/Context/GlobalContext';
 
-const homepage = () => {
+const Homepage = () => {
 
   const {
     users
@@ -32,4 +32,4 @@ const homepage = () => {
   )
 }
 
-export default homepage
+export default Homepage
