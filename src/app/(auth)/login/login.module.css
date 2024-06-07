@@ -9,6 +9,12 @@
 
 }
 
+.error{
+    color: rgb(255, 0, 93);
+    font-weight: bold;
+
+}
+
 .ragistrationContainer {
     background: #fafafa;
     width: fit-content;

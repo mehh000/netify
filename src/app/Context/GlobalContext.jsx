@@ -24,42 +24,42 @@ export const GlobalContextProvider = ({ children }) => {
   const [storageLvlPrice, setStorageLvlPrice] = useState(2500)
 
   const [data, setData] = useState({});
+  const [auth, setAuth] = useState(false);
 
 
   //fire base data get function here
 
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.telegram.org/bot7284102937:AAFEFp3JhAjUQv80XtFUiA9kPOUwXJj2HSY/getUpdates'
-        );
-        setData(response.data);
-        console.log('Data fetched:', data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-
-
-
-    fetchData()
-  }, [balance]);
 
 
 
   //temporaly
   const status = 'unauthinticated'
 
+  useEffect(() => {
+    // Get data from local storage
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      // Parse the JSON string to an object
+      const parsedUserData = JSON.parse(userData);
+      // Set the user data to the state
+      setUsers(parsedUserData);
+      setAuth(true)
+    }
+  }, []);
+
+
+  console.log("my user data is ", users);
+  console.log("my auth data is ", auth);
 
 
 
 
   return (
     <GlobalContext.Provider value={{
+      auth,
       users,
       balance,
       tapLimit,

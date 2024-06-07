@@ -22,6 +22,9 @@ const Home = () => {
 
 
   const {
+    auth,
+    setUsers,
+    users,
     status,
     balance,
     tapLimit,
@@ -32,9 +35,13 @@ const Home = () => {
   } = useGlobalContext();
 
 
-  if ( status === 'unauthinticated' ) {
-    navigation.push('login')
+if(auth == false){
+    navigation.push('/login')
+  } else {
+    navigation.push('/')
   }
+
+
 
   const handleClick = () => {
     setIsClicked(true);
