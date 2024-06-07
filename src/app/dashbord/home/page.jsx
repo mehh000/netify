@@ -4,20 +4,18 @@
 import React from 'react'
 import cl from "./home.module.css"
 import Image from 'next/image'
-import { useGlobalContext } from '@/app/Context/GlobalContext';
+
 
 const Homepage = () => {
 
-  const {
-    users
-  } = useGlobalContext();
+
   return (
     <div className={cl.container}>
 
       <div className={cl.cardContainer}>
         <Image src='/member.png' height={40} width={40} alt='member' />
         <h1 className={cl.cardTitle}>
-          Total Member: <span className={cl.number}>{users.length}</span>
+          Total Member: 
         </h1>
       </div>
 

@@ -4,17 +4,11 @@
 import React from 'react';
 import cl from './member.module.css';
 import Image from 'next/image';
-import { useGlobalContext } from '@/app/Context/GlobalContext';
+
 
 const Members = () => {
 
 
-  const {
-    users
-  } = useGlobalContext();
-
-  console.log("from member page", users.length
-);
 
 
   return (
@@ -33,19 +27,18 @@ const Members = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            users.map((data) => (
-              <tr className={cl.tbodyRow} key={data.id} >
-                <td className={cl.td}>{data.username}</td>
-                <td className={cl.td}>{data.userId}</td>
-                <td className={cl.td}>{data.balance}</td>
+         
+              <tr className={cl.tbodyRow}  >
+                <td className={cl.td}>a</td>
+                <td className={cl.td}>s</td>
+                <td className={cl.td}>d</td>
                 <td className={cl.td}>
                   <button className={cl.buttonEdit}>Edit</button>
                   <button className={cl.buttonDelete}>Delete</button>
                 </td>
               </tr>
-            ))
-          }
+           
+          
 
 
         </tbody>

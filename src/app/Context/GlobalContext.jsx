@@ -23,14 +23,13 @@ export const GlobalContextProvider = ({ children }) => {
   const [storageLvl, setStorageLvl] = useState(1)
   const [storageLvlPrice, setStorageLvlPrice] = useState(2500)
 
-  const [data, setData] = useState({});
   const [auth, setAuth] = useState(false);
 
 
   //fire base data get function here
 
   const [users, setUsers] = useState();
-  const [loading, setLoading] = useState(true);
+
 
 
 
@@ -50,9 +49,6 @@ export const GlobalContextProvider = ({ children }) => {
     }
   }, []);
 
-
-  console.log("my user data is ", users);
-  console.log("my auth data is ", auth);
 
 
 

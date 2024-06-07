@@ -20,12 +20,18 @@ const Home = () => {
   const [holdRankingTitle, setHoldRankingTitle] = useState("");
   const navigation = useRouter()
 
+  useEffect(() => {
+    // Check if user is already logged in
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      // Redirect to home page if user is already logged in
+     
+    } else {
+      return  navigation.push('/login');
+    }
+  }, [navigation]);
 
   const {
-    auth,
-    setUsers,
-    users,
-    status,
     balance,
     tapLimit,
     setBalance,
@@ -33,13 +39,6 @@ const Home = () => {
     storageDynamic,
     setStorageDynamic,
   } = useGlobalContext();
-
-
-if(auth == false){
-    navigation.push('/login')
-  } else {
-    navigation.push('/')
-  }
 
 
 
@@ -93,7 +92,7 @@ if(auth == false){
       setHoldRankingImagePath(Levels[6].image);
       setHoldRankingTitle(Levels[6].name);
     }
-    console.log(holdRankingImagePath);
+
   }, [balance]);
 
   return (

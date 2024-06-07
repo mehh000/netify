@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import cl from './login.module.css';
 import { collection, query, where, getDocs } from 'firebase/firestore';
@@ -8,14 +8,27 @@ import { db } from '../../firebaseConfig'; // Adjust the path to your Firebase c
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
+
 const Login = () => {
+
+
+
   const [formError, setFormError] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
 
-  const navigation =  useRouter();
+  const navigation = useRouter();
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      // Redirect to home page if user is already logged in
+      navigation.push('/');
+    }
+  }, [navigation]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,12 +49,12 @@ const Login = () => {
         // User found
         querySnapshot.forEach((doc) => {
           const userData = doc.data();
-          console.log('User data:', userData);
+         // console.log('User data:', userData);
           // Store user data in local storage
-           navigation.push('/')
-          localStorage.setItem('userData', JSON.stringify(userData));
-         
 
+          localStorage.setItem('userData', JSON.stringify(userData));
+
+          navigation.push('/');
         });
       } else {
         setFormError('Invalid username or password');
@@ -57,6 +70,8 @@ const Login = () => {
       setFormError('An error occurred. Please try again.');
     }
   };
+
+
 
   return (
     <div className={cl.container}>
