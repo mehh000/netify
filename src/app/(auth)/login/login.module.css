@@ -1,0 +1,62 @@
+.container {
+    background: linear-gradient(186deg, rgba(0, 0, 0, 1) 0%, rgba(0, 134, 255, 1) 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.ragistrationContainer {
+    background: #fafafa;
+    width: fit-content;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px black;
+    justify-content: space-around;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.ragoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+.subBtn{
+    color: white;
+    background: #03A9F4;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(147, 147, 147);
+    padding: 3px;
+    border-radius: 5px;
+    background: white;
+    gap: 2px;
+}
+
+.inputbox {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.backlink {}

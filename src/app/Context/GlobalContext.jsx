@@ -37,7 +37,7 @@ export const GlobalContextProvider = ({ children }) => {
         const response = await axios.get(
           'https://api.telegram.org/bot7284102937:AAFEFp3JhAjUQv80XtFUiA9kPOUwXJj2HSY/getUpdates'
         );
-        setData(response.data); 
+        setData(response.data);
         console.log('Data fetched:', data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -48,6 +48,11 @@ export const GlobalContextProvider = ({ children }) => {
 
     fetchData()
   }, [balance]);
+
+
+
+  //temporaly
+  const status = 'unauthinticated'
 
 
 
@@ -72,7 +77,7 @@ export const GlobalContextProvider = ({ children }) => {
       setStorageLvlPrice,
       setTapLimit,
       setStorage,
-
+      status
     }}>
       {children}
     </GlobalContext.Provider>

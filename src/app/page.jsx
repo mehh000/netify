@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useGlobalContext } from "./Context/GlobalContext";
 import Levels from "./lib/rankingData";
 import { collection, addDoc } from "firebase/firestore";
+import { useRouter } from "next/navigation";
 
 
 
@@ -17,17 +18,23 @@ const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [holdRankingImagePath, setHoldRankingImagePath] = useState("");
   const [holdRankingTitle, setHoldRankingTitle] = useState("");
+  const navigation = useRouter()
 
 
-const {
-  balance,
-  tapLimit,
-  setBalance,
-  storage,
-  storageDynamic,
-  setStorageDynamic,
-} = useGlobalContext();
-  // console.log(balance);
+  const {
+    status,
+    balance,
+    tapLimit,
+    setBalance,
+    storage,
+    storageDynamic,
+    setStorageDynamic,
+  } = useGlobalContext();
+
+
+  if ( status === 'unauthinticated' ) {
+    navigation.push('login')
+  }
 
   const handleClick = () => {
     setIsClicked(true);
