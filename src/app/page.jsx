@@ -32,14 +32,11 @@ const Home = () => {
   const {
     holdRankingImagePath,
     holdRankingTitle,
-    balance,
     tapLimit,
-    setBalance,
     storage,
     storageDynamic,
     setStorageDynamic,
     users,
-    handleRender,
     handleBalance,
   } = useGlobalContext();
 

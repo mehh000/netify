@@ -1,15 +1,15 @@
 'use client';
 
-import { collection, getDocs, query, where, doc, updateDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, updateDoc, query, where } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { createContext, useContext, useState, useEffect } from "react";
-import axios from 'axios';
 import Levels from '../lib/rankingData';
 
 const GlobalContext = createContext({});
 
 export const GlobalContextProvider = ({ children }) => {
-  const [balance, setBalance] = useState(100000);
+  const [balance, setBalance] = useState( 100000);
+
   const [tapLimit, setTapLimit] = useState(1);
   const [storage, setStorage] = useState(1000);
   const [storageDynamic, setStorageDynamic] = useState(1000);
@@ -22,14 +22,13 @@ export const GlobalContextProvider = ({ children }) => {
   const [holdRankingImagePath, setHoldRankingImagePath] = useState("");
   const [holdRankingTitle, setHoldRankingTitle] = useState("");
 
-  // Fetch data from Firestore based on unicid
   const fetchUserData = async (unicid) => {
     const usersRef = collection(db, 'users');
     const q = query(usersRef, where('unicid', '==', unicid));
     const querySnapshot = await getDocs(q);
     if (!querySnapshot.empty) {
       const userData = querySnapshot.docs[0].data();
-      return { id: querySnapshot.docs[0].id, ...userData };
+      return { ...userData, id: querySnapshot.docs[0].id };
     }
     return null;
   };
@@ -40,6 +39,7 @@ export const GlobalContextProvider = ({ children }) => {
       const parsedUserData = JSON.parse(userData);
       setUsers(parsedUserData);
       setAuth(true);
+      setBalance(parsedUserData.balance);  // Set balance from local storage
     }
   }, []);
 
@@ -50,6 +50,7 @@ export const GlobalContextProvider = ({ children }) => {
         if (fetchedUserData) {
           localStorage.setItem('userData', JSON.stringify(fetchedUserData));
           setUsers(fetchedUserData);
+          setBalance(fetchedUserData.balance);  // Set balance from fetched data
         }
       };
       updateUserData();
@@ -89,21 +90,28 @@ export const GlobalContextProvider = ({ children }) => {
     }
   }, [users, balance]);
 
-  const handleBalance = async () => {
+  const handleBalance = () => {
     if (users) {
-      try {
-        const userDocRef = doc(db, 'users', users.id);
-        await updateDoc(userDocRef, {
-          balance: users.balance + 1
-        });
-        const updatedUser = { ...users, balance: users.balance + 1 };
-        setUsers(updatedUser);
-        localStorage.setItem('userData', JSON.stringify(updatedUser));
-      } catch (error) {
-        console.error('Error updating balance:', error);
-      }
+      const newBalance = balance + 1;
+      setBalance(newBalance);
+      const updatedUserData = { ...users, balance: newBalance };
+      setUsers(updatedUserData);
+      localStorage.setItem('userData', JSON.stringify(updatedUserData));
     }
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(async () => {
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        const parsedUserData = JSON.parse(userData);
+        const userDocRef = doc(db, 'users', parsedUserData.id);
+        await updateDoc(userDocRef, { balance: parsedUserData.balance });
+      }
+    }, 200);
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, []);
 
   return (
     <GlobalContext.Provider value={{
@@ -129,7 +137,7 @@ export const GlobalContextProvider = ({ children }) => {
       setStorageLvlPrice,
       setTapLimit,
       setStorage,
-      handleBalance,
+      handleBalance, // Provide handleBalance in context
     }}>
       {children}
     </GlobalContext.Provider>
